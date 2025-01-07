@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆页面</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image:url(../img/登录/1.jpg)
+        }
+        .denglu{
+            position: absolute;/*绝对定位*/
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .denglumiddle{
+            position: relative;/*相对定位*/
+            top:15%;
+            left: 35%;
+            right: 35%;
+            background-color: rgba(255, 255, 255, 0.988);
+            width: 30%;
+            height: 65%;
+            border-radius: 10px;/*圆角度数设置*/
+            box-shadow: rgb(234, 234, 234) 5px 5px 5px ;
+        }
+        .tab{
+            float: left;
+            width: 85%;
+            height: 90%;
+            margin: 20px 30px 20px 30px;
+            /* background: #ffcdcd; */
+        }
+        .tab:nth-last-of-type(1){
+            margin-right: 0px;
+        }
+        .tabname>span{
+            display: inline-block; /* 块级元素 */
+            width: 100px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            flex-grow: 1;
+            font-size: 16px;
+            font-weight: bold;  
+        }
+        .tabname>.cur{
+            background-color: rgb(255, 255, 255);
+            color: #000;
+            margin-bottom: -1px;
+            border-bottom: 2px solid #005ea4;  
+        }
+        .tabtext{
+            border-top: none;
+            text-align: left;
+            display: none;  
+        }
+        .tabtext ul li:nth-of-type(1){
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .tabtext ul a{
+            color:#000;
+            line-height: 37px;
+        }
+        /* .tabtext ul a:hover{
+            color: #005ea4;
+        } */
+        .show{
+            display: block;
+            margin-top: 20px;
+        }
+
+        form div{
+            margin-left: -50px;
+            margin-bottom: 10px;
+        }
+        .yh{
+            margin-bottom: 30px;
+
+        }
+        .queren{
+            position: absolute;
+            top: 180px;
+            left: -10px;
+            bottom:10px;
+            width: 330px;
+        }
+        .queren input{
+            background-color: #ffb41e;
+            color: #ffffff;
+            font-weight: bold;
+            width: 280px;
+            border: none;
+        }
+        
+        #fm>div{
+            display: flex;
+            height: 20px;
+            line-height: 32px;
+
+        }
+        #fm label{
+            width: 100px;
+            font-style:18px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .error{
+            font-size: 6px;
+            display: inline-block;
+            color: rgb(255, 0, 0);
+            display: none;
+            top: 30px;
+            font-size: 15px;
+            margin-left: -30px;
+            margin-top:10px;
+            position: relative;
+        }
+
+        #fm>div:last-child{
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+        .yh input{
+            position:relative;
+            top: 40px;
+            left: -45px;
+            height: 30px;
+            margin-bottom: 20px;
+            border-width: 0px;
+        }
+        .yh label{
+            margin-top: -8px;
+        }
+        .yh:nth-child(2){
+            margin-top: 50px;
+        }
+        input:focus {
+            outline: none/*去除输入框*/
+        }
+        .middle{
+            overflow: hidden;/*消除浮动默认值*/
+            margin-top: 130px;
+            width: 92%;
+            margin-left: 6%;
+        }
+        .wx,.qq,.wb{
+            width: 30%;
+            float: left;
+            text-align: center;
+            margin-right: 10px;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+        .wx{
+            background-color: rgb(0, 192, 128);
+        }
+        .qq{
+            background-color: hsl(217, 99%, 55%);
+        }
+        .wb{
+            margin-right: 0;
+            background-color: #ff3c3c;
+        }
+        .wx p,.qq p,.wb p{
+            margin: 5px 0;
+        }
+        .bottom{
+            overflow: hidden;
+            width: 95%;
+            margin-left: 6%;
+            margin-top: 20px;
+        }
+        .wx1,.qq1{
+            width: 43%;
+            float: left;
+            text-align: center;
+            margin-right: 25px;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+        .wx1{
+            background-color: rgb(0, 192, 128);
+            margin-right: 0;
+        }
+        .qq1{
+            background-color: hsl(217, 99%, 55%);
+            
+        }
+        .wx1 p,.qq1 p{
+            margin: 5px 0;
+        }
+        .yzm{
+            position: relative;
+            margin-top: 50px;
+            
+        }
+        .yzm #code_box{/*验证码*/
+            position: absolute;
+
+        }
+        #code_box{/*验证码*/
+            padding: 0px 0;
+            background-color:#ffb41e;
+            line-height: 40px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 16px;
+            margin: 30px auto;
+            cursor: pointer;/*光标为小手*/
+            right: 0px;
+            top:10px;
+            display: block;
+            width: 100px;
+            height: 40px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        .biaodan{
+            margin-left: -50px;
+        }
+        .biaodan .queren input{
+            margin-top: 80px;
+        }
+        .wx a,.wb a,.qq a,.wx1 a,.qq1 a{
+            text-decoration: none;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="denglu">
+        <div class="denglumiddle">
+            <div class="tab">
+                <div class="tabname">
+                    <span class="cur">密码登录</span>
+                    <span>短信登录</span>
+                </div>
+        
+                <div class="tabtext show">
+                    <form action="" method="post" name="fm" id="fm" onsubmit="return checkform()">
+                        <div class="yh">
+                            <label for="user"><p>账号</p></label>
+                            <input type="text" id="user" name="user" class="input" placeholder="请输入邮箱/手机">
+                            <span class="error">该项为11位</span>
+                        </div>
+                    
+                        <div class="yh">
+                            <label for="pwd"><p>密码</p></label>
+                            <input type="password" id="pwd" name="pwd" class="input"placeholder="请输入密码" >
+                            <span class="error">密码为8-12位</span>
+                        </div>
+                    
+                        <div class="yh queren">
+                            <a href="index.html">
+                               <input type="submit" value="登录"  onclick='window.open("index.html")'>
+                            </a>
+                        </div>
+                    </form>
+                    <div class="middle">
+                        <div class="wx">
+                            <a href="index.html">
+                                <p>微信登陆</p>
+                            </a>
+                        </div>
+                        <div class="qq">
+                            <a href="index.html">
+                                <p>QQ登陆</p>
+                            </a>
+                        </div>
+                        <div class="wb">
+                            <a href="index.html">
+                                <p>微博登陆</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="qq1">
+                            <a href="index.html">
+                                <p>QQ登陆</p>
+                            </a>
+                        </div>
+                        <div class="wx1">
+                            <a href="index.html">
+                                <p>微信登陆</p>
+                            </a>    
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <script>
+                   
+                    //表单校验
+                        var user = document.getElementById("user")
+                        var error = document.getElementsByClassName("error")
+                        var pwd = document.getElementById("pwd")
+                        //onchange:内容改变：onfouce:获得焦点：onblur：失去焦点
+                        user.onchange = checkuser;/*函数名，不是调用函数*/
+                        pwd.onchange = checkpwd
+                        function checkuser(){
+                            if(user.value.length==11){
+                                error[0].style.display = "none"
+                                return 1;}
+                            else{
+                                error[0].style.display="block"
+                                return 0
+                            }
+                        }
+                        function checkpwd(){
+                            if(pwd.value.length > 8 && pwd.value.length < 12){
+                                error[1].style.display = "none";
+                                return 1;
+                            }
+                            else{
+                                error[1].style.display = "block";
+                                return 0;
+                            }
+                        }
+                </script>
+                <div class="tabtext">
+                    <ul>
+                        <div class="biaodan">
+                            <div class="gerendenglu">   
+                                <form action="" method="post" name="fm" id="fm" onsubmit="return checkform()">
+                                    <div class="yh">
+                                        <label for="user"><p>账号</p></label>
+                                        <input type="text" id="user" name="user" class="input" placeholder="请输入邮箱/手机">
+                                        <span class="error">该项为11位</span>
+                                    </div>
+                                
+                                    <div class="yh">
+                                        <label for="pwd" class="mmmm"><p>密码</p></label>
+                                        <input type="password" id="pwd" name="pwd"  class="input" placeholder="请输入密码">
+                                        <span class="error">密码为8-12位</span>
+                                    </div>        
+                                
+                                    <div class="yh yzm">
+                                        <label for="user" ><p class="yzmyzm">&nbsp;&nbsp;验证码</p></label>
+                                        <input type="text" class="input" placeholder="请输入验证码">
+                                        <div id="code_box">Afk3D</div>
+                                    </div>
+                
+                                    <div class="yh queren ">
+                                        <a href="index.html">
+                                            <input type="submit" value="登 录 / 注 册"  onclick='window.open("index.html")'>
+                                         </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+
+            <script>      
+                //tab选项卡 
+                var tab = document.getElementsByClassName("tab")[0];
+                var tabname = tab.getElementsByClassName("tabname")[0];
+                var span = tabname.getElementsByTagName("span");
+                var tabtext = tab.querySelectorAll(".tabtext");
+                for (var i=0 ; i<span.length;i++){
+                    span[i].index=i;
+                    span[i].onmousemove = function(){
+                        for(var j=0 ; j<span.length ; j++){
+                            span[j].classList.remove("cur");
+                            tabtext[j].classList.remove("show");
+                        }
+                        this.classList.add("cur");
+                        tabtext[this.index].classList.add("show");
+                    }
+                }
+                //随机验证码
+                var code_box = document.getElementById("code_box");
+                    function refreshCode() {
+                        var code = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ',
+                        char = ' ',
+                        result = ' ';   
+                            for (var i = 0; i < 5; i++) {
+                                //随机选择一位  （0,61） 写出0到61的随机的索引数字
+                                var code_index = Math.round(Math.random()*80);
+                                //得到随机的索引  取出随机地字符
+                                var char = code[code_index];
+                                //随机取出的字符 存在几个相同重复的问题 ，而且对于字母，不能区分大小写。
+                                // 避免重复的思路是：取出字符之后,和最后的result对比一下，看看里边是不是已经存在了，如果存在本次循环就终止，进行下一次
+                                if (result.toUpperCase().indexOf(char.toUpperCase()) > -1)
+                                //indexOf() == -1 说明结果里边没有要找的字符 那么 > -1 就是 里边有重复的字符
+                                    {	
+
+                                        i --;
+                                        //为什么会 --？ 因为如果条件成立，那么本轮循环就结束进行下一轮循环（自然i就加1了），那么本轮本应该取出的字符就没有了
+                                        //到最后会少一个字符 缺席
+                                        continue;//终止本轮循环 进行下一轮
+                                            }
+                                            result += char;
+                                        }
+                            code_box.innerHTML = result;
+                                }
+                    //点击事件
+                    code_box.onclick = refreshCode;
+                </script>
+        </div>
+    </div>
+</body>
+</html>

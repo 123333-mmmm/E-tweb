@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wode{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .zuo{
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 10%;
+            height: 440px;
+            overflow: hidden;
+            border: rgb(228, 216, 227) solid 2px;
+            background-color: rgb(240, 238, 238);
+            margin-top: 100px;
+            margin-left:10px;
+            overflow: hidden;
+
+       }
+		.zuo p{
+            font-size:35px;
+            font-weight:bolder;
+            margin-left:100px;
+        }
+		.zuo ul{
+            margin-left: 25px;
+        }
+		.zuo ul li{
+            margin-top:20px;
+            font-size:18px;
+            font-weight:350;
+            list-style: none;
+            font-weight: bold;
+        }
+		.zuo li a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .zuo li a:hover{
+            color:rgb(255, 179, 66);
+        }
+        .you{
+            overflow: hidden;
+        }
+        .tx{
+            float: left;
+        }
+        .tx img{
+            width: 150px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 60px;
+        }
+        .txul{
+            float: left;
+        }
+        .txul li{
+            float: left;
+            list-style: none;
+        }
+        .txul p{
+            margin-top: 130px;
+            margin-left: 50px;
+            color:rgb(197, 193, 193);
+        }
+        .txul li img{
+            width: 60px;
+            height: 60px;
+            margin-top: 70px;
+            margin-left: 50px;
+        }
+        .txul li img:hover{
+            transform: scale(1.2);
+        }
+        .bottom{
+            float: left;
+            overflow: hidden;
+            margin-left: 70px;
+        }
+        .bottom h3{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            color: grey;
+            border-bottom: 1px solid #000;
+        }
+        .bottomul{
+            float: left;
+        }
+        .bottomul li{
+            list-style: none;
+            color: rgb(102, 87, 87);
+            margin-top: 7px;
+        }
+        .zhanghao{
+            overflow: hidden;
+            width: 100%;
+            float: left;
+            margin-top: -20px;
+        }
+        .zhanghao h3{
+            color: rgb(248, 127, 56);
+            margin-left: 210px;
+            margin-top: 50px;
+        }
+        .zh{
+            width: 69%;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .zhul li{
+            float: left;
+            width: 100%;
+        }
+        .zhul li img{
+            width: 60px;
+            height: 60px;
+            margin-left: 200px;
+            margin-top: 30px;
+            float: left;
+        }
+        .zhul li h4{
+            float: left;
+            margin-top: 40px;
+            margin-left: 10px;
+        }
+        .zhul li p{
+            float: left;
+            margin-top: 70px;
+            font-size: 12px;
+            margin-left: -63px;
+        }
+        .zhul li span{
+            float:right;
+            width: 100px;
+            height: 30px;
+            background-color: rgb(240, 106, 44);
+            margin-top: 50px;
+            margin-left: 50px; 
+            color: #000;
+            padding-top: 7px;
+            padding-left: 27px;
+        }
+        .zhul li a{
+            /* line-height: 50px; */
+            /* margin-left: 10px; */
+            margin: 0 auto;
+        }
+       .li img{
+           margin-top: 100px;
+           margin-left: 100px;
+       }
+       .goBack{
+            
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 50px;
+            background-size:38px 38px ;
+            overflow: hidden;
+            
+        }
+        .goBack img{
+            width: 35px;
+            float: left;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wode">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="zuo">
+            <ul>
+                <li><a href="wode.html">个人中心</a></li>
+                <li><a href="fabu.html">我的发布</a></li>
+                <li><a href="huiyuan.html">我的会员</a></li>
+                <li><a href="#">交易记录</a></li>
+            </ul>
+        </div>
+
+        <div class="you">
+            <div class="tx">
+                <a href="#"><img src="../img/个人中心/头像.png"></a>
+            </div>
+            
+            <ul class="txul">
+                <p>请选择喜欢的头像</p>
+                <li><a href="#"><img src="../img/个人中心/1.webp"></a></li>
+                <li><a href="#"><img src="../img/个人中心/2.webp"></a></li>
+                <li><a href="#"><img src="../img/个人中心/3.webp"></a></li>
+                <li><a href="#"><img src="../img/个人中心/4.webp"></a></li>
+                <li><a href="#"><img src="../img/个人中心/5.webp"></a></li>
+                <li><a href="#"><img src="../img/个人中心/6.webp"></a></li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <h3>修改个人资料</h3>
+            <ul class="bottomul">
+                <li>用户名：明明</li>
+                <li>昵称：宠爱小新</li>
+                <li>手机：191****7230</li>
+                <li>邮箱：1712029682@qq.com</li>
+            </ul>
+        </div>
+        <div class="zhanghao">
+            <h3>账号绑定</h3>
+            <div class="zh">
+                <ul class="zhul">
+                    <li>
+                        <img src="../img/个人中心/邮箱.png">
+                        <h4>邮箱绑定</h4>
+                        <p>可使用绑定邮箱直接登录领养E家</p>
+                        <a href="#"><span>立即绑定</span></a>
+                    <li>
+                        <img src="../img/个人中心/手机.png">
+                        <h4>认证手机</h4>
+                        <p>191****7230</p>
+                        <a href="#"><span>换绑手机</span></a>
+                    </li>
+                    <li>
+                        <img src="../img/个人中心/qq.png">
+                        <h4>QQ账号</h4>
+                        <p>可使用QQ账号直接登录领养E家分享信息至Qzone</p>
+                        <a href="#"><span>立即绑定</span></a>
+                    </li>
+                    <li>
+                        <img src="../img/个人中心/新浪微博.png">
+                        <h4>新浪微博</h4>
+                        <p>可使用微博账号直接登录领养E家发布时分享信息至微博</p>
+                        <a href="#"><span>立即绑定</span></a>
+                    </li>
+                    <li>
+                        <img src="../img/个人中心/微信.png">
+                        <h4>微信账号</h4>
+                        <p>可使用微信账号直接登录领养E家发布时分享信息至微信朋友圈和微信好友</p>
+                        <a href="#"><span>立即绑定</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="goBack">
+                <img src="../img/个人中心/返回顶部.png">
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var go = document.getElementsByClassName("goBack")[0]; 
+            window.addEventListener("scroll",function(){
+                if(window.pageYOffset >= main.offsetTop + 300){
+                    go.style.display = "block";
+
+                }
+                else{
+                    go.style.display = "none";
+                }
+            })
+
+            go.addEventListener("click",function(){
+                window.scroll(0,0)
+            })
+    </script>
+</body>
+</html>

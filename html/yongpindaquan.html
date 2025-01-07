@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        .yongpindaquan{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .daohang2{
+            overflow: hidden;
+            margin-top: 110px;
+            width: 100%;
+            float: left;
+        }
+        .daohang2ul{
+            width: 100%;
+            overflow: hidden;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .daohang2ul li{
+            float: left;
+            width: 60px;
+            margin-right: 15px;
+            font-size: 18px;
+            list-style: none;
+            border: orangered solid 1px;
+            background-color: rgb(255, 153, 0);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .daohang2ul li a{
+            text-decoration: none;
+            color:black;
+        }
+        .daohang2ul li a:hover{
+            color: rgb(227, 230, 107);
+        }
+        .pinpai{
+            overflow: hidden;
+            float: left;
+            width: 100%;
+        }
+        .pinpaiul{
+            overflow: hidden;
+            float: left;
+            width: 100%;
+            margin-left: 50px;
+        }
+        .pinpaiul li{
+            width: 200px;
+            margin-right: 10px;
+            margin-left: 10px;
+            float: left;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .pinpaiul img{
+            width: 200px;
+        }
+        .pinpaiul img:hover{
+            transform: scale(1.1);/*放大1.1倍*/
+        }
+        .wenzi{
+            width: 200px;
+            color:rgb(143, 139, 139);
+            background-color: gainsboro;
+            margin-top: -5px;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .wenzi a{
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .pinpaiul a:hover{
+            color:orange;
+        }
+        .bottom{
+            overflow: hidden;
+            float: left;
+            padding-bottom: 40px;
+        }
+        .bottomul{
+            margin-left: 450px;
+            margin-top: 35px;
+            width: 100%;
+            text-align: center;
+            
+        }
+        .bottomul li {
+            float: left;
+            list-style: none;
+            margin-left: 50px;
+            border: orange solid 1px;
+            padding: 0 10px;
+
+        }
+        .bottomul li:nth-child(1){
+            background-color: rgb(255, 239, 209);
+        }
+        .bottomul li a{
+            font-size: 25px;
+            text-decoration: none;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="yongpindaquan">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+               
+            </div>
+        </div>
+        <div class="daohang2">
+            <ul class="daohang2ul">
+                <li><a href="yongpindaquan.html">品牌库</a></li>
+                <li><a href="shipinku.html">食品库</a></li>
+            </ul>
+        </div>
+        <div class="pinpai">
+            <ul class="pinpaiul">
+                <li>
+                    <a href="yongping1.html"><img src="../img/用品大全/图片1.png"></a>
+                    <div class="wenzi">
+                        <a href="yongping1.html">淘豆玩国</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片2.png"></a>
+                    <div class="wenzi">
+                        <a href="#">凯锐思</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片3.png"></a>
+                    <div class="wenzi">
+                        <a href="#">比瑞吉</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片4.png"></a>
+                    <div class="wenzi">
+                        <a href="#">卡比</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片5.png"></a>
+                    <div class="wenzi">
+                        <a href="#">冠能</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片6.png"></a>
+                    <div class="wenzi">
+                        <a href="#">卫仕</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片7.png"></a>
+                    <div class="wenzi">
+                        <a href="#">法米娜</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片8.png"></a>
+                    <div class="wenzi">
+                        <a href="#">冠邦</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片9.png"></a>
+                    <div class="wenzi">
+                        <a href="#">鲜粮说</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片10.png"></a>
+                    <div class="wenzi">
+                        <a href="#">ezydog</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片11png.png"></a>
+                    <div class="wenzi">
+                        <a href="#">喵可佳猫粮</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片12.png"></a>
+                    <div class="wenzi">
+                        <a href="#">荒野盛宴</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片13.png"></a>
+                    <div class="wenzi">
+                        <a href="#">博莱药业兽药</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片14.png"></a>
+                    <div class="wenzi">
+                        <a href="#">摩咖猫粮</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片15.png"></a>
+                    <div class="wenzi">
+                        <a href="#">奥百思猫粮</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片16.png"></a>
+                    <div class="wenzi">
+                        <a href="#">益和宠物</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片17.png"></a>
+                    <div class="wenzi">
+                        <a href="#">弗兰士猫粮</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片18.png"></a>
+                    <div class="wenzi">
+                        <a href="#">威尔逊馋嘴</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片19.png"></a>
+                    <div class="wenzi">
+                        <a href="#">多必利兽药</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/用品大全/图片20.png"></a>
+                    <div class="wenzi">
+                        <a href="#">绿福摩</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <ul class="bottomul">
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">尾页</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

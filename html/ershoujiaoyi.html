@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        .ershoujiaoyi{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .zuo{
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 10%;
+            height: 200px;
+            overflow: hidden;
+            border: rgb(228, 216, 227) solid 2px;
+            background-color: rgb(255, 147, 58);
+            margin-top: 10px;
+            margin-left:10px;
+            overflow: hidden;
+
+       }
+		.zuo p{
+            font-size:35px;
+            font-weight:bolder;
+            margin-left:100px;
+        }
+		.zuo ul{
+            margin-left: 25px;
+        }
+		.zuo ul li{
+            margin-top:20px;
+            font-size:18px;
+            font-weight:350;
+            list-style: none;
+        }
+		.zuo li a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .zuo li a:hover{
+            color:gainsboro;
+        }
+        .content{
+            width: 100%;
+        }
+        .gg{
+            overflow-x: hidden;
+            width: 100%;
+        }
+        .gg img{
+            margin-top: 100px;
+            margin-left: 10px;
+            width: 98%;
+        }
+        .middle{
+            width: 68%;
+            overflow: hidden;
+            float: left;
+            margin-top: 11px;
+            margin-left: 30px;
+        }
+        .middleul{
+            float: left;
+            overflow: hidden;
+            width: 100%;
+        }
+        .middleul li{
+            width: 100%;
+            float: left;
+            padding-bottom: 17px;
+            border-bottom: 1px solid rgb(221, 221, 221);
+        }
+        .middleul li img{
+            width: 100px;
+            margin:5px 5px;
+            height: 80px;
+            float: left;
+            margin-top: 15px;
+        }
+        .middleul li img:hover{
+            transform: scale(1.2);
+        }
+        .middleul li h3{
+            float: left;
+            width: 86%;
+            margin-top: 15px;
+        }
+        .middleul li h3 a{
+            text-decoration: none;
+            color: #000;
+        }
+        .middleul li h3 a:hover{
+            color: rgb(250, 150, 35);
+        }
+        .middleul li:nth-last-child(1){
+            border-bottom:  none
+        }
+        .bottom{
+            width: 86%;
+            float: left;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+        .bottom p{
+            float: left;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .middleul .bottom img{
+            float: right;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-top: 3px;
+        }
+        .bottom span{
+            float: right;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .you{
+            width: 16%;
+            
+            float: left;
+            overflow: hidden;
+            margin-left: 15px;
+        }
+        .tupian1{
+            width: 100%;
+            margin-top: 10px;
+        }
+        .toutiao{
+            width: 100%;
+            float: left;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        .toutiao h3{
+            float: left;
+        }
+        .toutiao span{
+            float: right;
+            margin-top: 5px;
+            font-size: 15px;
+        }
+        .toutiao span a{
+            text-decoration: none;
+            color: rgb(92, 92, 92);
+        }
+        .ttnr{
+            width: 100%;
+            overflow: hidden;
+            float: left;
+            margin-top: 10px;
+        }
+        .ttnr li{
+            float: left;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .ttnr li img{
+            width: 46%;
+            float: left;
+            margin-right: 2%;
+        }
+        .ttnr li p{
+            width: 52%;
+            float: left;
+            font-size: 12px;
+        }
+        .jzgd{
+            border:rgb(231, 134, 69) solid 2px;
+            float: left;
+            margin-left: 420px;
+            background-color: orange ;
+            border-radius: 7px;
+            margin-top: 50px;
+        }
+        .jzgd h2 a{
+            text-decoration: none;
+            color: #000;           
+        }
+        .jzgd h2 a:hover{
+            color: rgb(201, 41, 41);
+            background-color: rgb(230, 227, 227);
+        }
+        .footer{ 
+            width: 100%;
+            background: rgb(247, 135, 8);
+            margin-top: 62px;
+            text-align: center;
+            color: #000000;
+            line-height: 21px;
+            font-size: 13px;
+            float: left;
+            padding: 20px 0;
+        }
+        .footer  span{
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="ershoujiaoyi1">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="gg">
+                <img src="../img/宠爱社区/广告1.png"> 
+
+            </div>
+            <div class="zuo">
+                <ul>
+                    <li><a href="chongaishequ.html">养宠问答</a></li>
+                    <li><a href="ershoujiaoyi.html">二手交易</a></li>
+                    <li><a href="jingyanfenxiang.html">经验分享</a></li>
+                    <li><a href="jiuzhuzhongchou.html">救助众筹</a></li>
+                </ul>
+            </div>
+            <div class="middle">
+                <ul class="middleul">
+                    <!-- 1 -->
+                    <li>
+                        <a href="jiaoyi1.html"><img src="../img/二手交易/问答1.jpg"></a>
+                        <h3><a href="jiaoyi1.html">弗列加特70%成猫鲜肉粮，鸡肉味，双十一优惠价买的8kg，里面是1kg的..</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>Bittern 更新于 2024-01-25 01:33</span>
+                            <img src="../img/二手交易/头像1.jpg">
+                        </div>
+                    </li>
+                    <!-- 2 -->
+                    <li>
+                        <a href="#"><img src="../img/二手交易/问答2.jpg"></a>
+                        <h3><a href="#">猫咖不干了，之前囤的大量猫罐头便宜出了回回血，下面是样品...</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>柠檬糖糖 更新于 2024-01-06 17:36</span>
+                            <img src="../img/二手交易/头像2.jpg">
+                        </div>
+                    </li>
+                    <!-- 3 -->
+                    <li>
+                        <a href="#"><img src="../img/二手交易/问答3.jpg"></a>
+                        <h3><a href="#">一个外涂，一个内服，快到期了，免费送。</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>困困 更新于 2023-12-28 15:25</span>
+                            <img src="../img/二手交易/头像3.jpg">
+                        </div>
+                    </li>
+                    <!-- 4 -->
+                    <li>
+                        <a href="#"><img src="../img/二手交易/问答4.jpg"></a>
+                        <h3><a href="#">猫粮猫窝 猫砂 驱虫药 益生菌 猫罐头 猫条 猫背包 等等...</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>龙蝈蝈 更新于 2023-11-30 23:03</span>
+                            <img src="../img/二手交易/头像4.jpg">
+                        </div>
+                    </li>
+                    <!-- 5 -->
+                    <li>
+                        <a href="#"><img src="../img/二手交易/问答5.jpg"></a>
+                        <h3><a href="#">麦富迪猫粮1.7千克，全部没开封，有五包</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>杨芳侠 更新于 2023-11-29 09:25</span>
+                            <img src="../img/二手交易/头像5.jpg">
+                        </div>
+                    </li>
+                    <!-- 6 -->
+                    <li>
+                        <a href="#"><img src="../img/二手交易/问答6.jpg"></a>
+                        <h3><a href="#">很多猫粮猫条猫零食，都是直播间品牌做任务免费寄送，wowo试吃5块钱</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>波妞麻麻 更新于 2023-11-07 20:23</span>
+                            <img src="../img/二手交易/头像6.jpg">
+                        </div>
+                    </li>
+                    <!-- 7 -->
+                    <li>
+                        <a href="#"><img src="../img/二手交易/问答7.jpg"></a>
+                        <h3><a href="#">有没有姐妹收的呀，走，家里大猫挑，小猫还小而且玻璃胃，吃点别的就串</a></h3>
+                        <div class="bottom">
+                            <p>二手交易/食品用品·转让</p>
+                            <span>不许欺负我矮 更新于 2023-07-13 03:23</span>
+                            <img src="../img/二手交易/头像7.jpg">
+                        </div>
+                    </li>
+                    <div class="jzgd">
+                        <h2><a href="#">加&nbsp载&nbsp更&nbsp多</a></h2>
+                    </div>
+                    
+                </ul>
+
+            </div>
+            <div class="you">
+                <div class="toutiao">
+                    <h3>宠物头条</h3>
+                    <span><a href="#">更多>></a></span>
+                 </div>
+                 <ul class="ttnr">
+                     <li>
+                        <img src="../img/二手交易/头条1.jpg">
+                        <p>狗狗萎靡不振没精神怎么回事 狗狗很容易受到环境</p>   
+                     </li>
+                     <li>
+                        <img src="../img/二手交易/头条2.jpg">
+                        <p>猫可以吃橄榄油吗 猫猫的肠胃对食物是很挑剔的</p>   
+                     </li>
+                     <li>
+                        <img src="../img/二手交易/头条3.jpg">
+                        <p>猫咪可以吃柿子吗 喂食柿子容易刺激胃肠道</p>   
+                     </li>
+                     <li>
+                        <img src="../img/宠爱社区/头条1.jpg">
+                        <p>猫咪拉稀什么原因 容易出现应激反应的动物</p>   
+                     </li>
+                     <li>
+                        <img src="../img/宠爱社区/头条3.jpg">
+                        <p>猫咪发出咕咕声音是什么意思 猫和猫的一种交流方</p>   
+                     </li>
+                     
+                     
+                 </ul>
+                <img class="tupian1" src="../img/二手交易/长图1.png">
+
+            </div>
+        </div>
+        <div class="footer">
+            <span>宠物资讯 | <span>社区精选</span> | <span>管理团队</span> | <span>下载客户端</span> | 会员服务 | <span>宠物送养</span> | <span>宠物领养</span> | <span>关于我们</span> | <span>领养E家</span></span>
+            <p>商务合作邮箱:1712029682@qq.com 客服电话:89736429</p>
+            <p>网站展示的宠物及品牌信息和数据，是基于互联网大数据及品牌方的公开信息，收集整理客观呈现，仅提供参考使用，不代表网站支持观点；
+              如有侵权、错误信息，请及时联系我们更正或删除！</p>
+            <p>领养E家版权所有</p>
+            <p>QQ:1712029682  备案号: 沪GHJ备16030722号-7</p>
+            <p>©2014 - 2024        联系我们免责声明</p>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

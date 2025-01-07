@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        .index{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .zuo{
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 10%;
+            height: 200px;
+            overflow: hidden;
+            border: rgb(228, 216, 227) solid 2px;
+            background-color: rgb(255, 147, 58);
+            margin-top: 10px;
+            margin-left:10px;
+            overflow: hidden;
+
+       }
+		.zuo p{
+            font-size:35px;
+            font-weight:bolder;
+            margin-left:100px;
+        }
+		.zuo ul{
+            margin-left: 25px;
+        }
+		.zuo ul li{
+            margin-top:20px;
+            font-size:18px;
+            font-weight:350;
+            list-style: none;
+        }
+		.zuo li a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .zuo li a:hover{
+            color:gainsboro;
+        }
+        .content{
+            width: 100%;
+        }
+        .gg{
+            overflow-x: hidden;
+            width: 100%;
+        }
+        .gg img{
+            margin-top: 100px;
+            margin-left: 10px;
+            width: 98%;
+        }
+        .middle{
+            width: 68%;
+            overflow: hidden;
+            float: left;
+            margin-top: 11px;
+            margin-left: 30px;
+        }
+        .middleul{
+            float: left;
+            overflow: hidden;
+            width: 100%;
+        }
+        .middleul li{
+            width: 100%;
+            float: left;
+            padding-bottom: 17px;
+            border-bottom: 1px solid rgb(221, 221, 221);
+        }
+        .middleul li img{
+            width: 250px;
+            margin:10px 10px;
+            height: 150px;
+            float: left;
+            margin-top: 15px;
+        }
+        .middleul li img:hover{
+            transform: scale(1.2);
+        }
+        .middleul li h3{
+            float: left;
+            width: 86%;
+            margin-top: 15px;
+        }
+        .middleul li h3 a{
+            text-decoration: none;
+            color: #000;
+        }
+        .middleul li h3 a:hover{
+            color: rgb(250, 150, 35);
+        }
+        .middleul li p{
+            color:rgb(177, 175, 175);
+            font-size: 12px;
+            margin-top: 5px;
+            margin-right: 100px;
+            float: left;
+            padding-left: 10px;
+        }
+        .middleul li:nth-last-child(1){
+            border-bottom:  none
+        }
+       
+        .middleul .bottom img{
+            float: right;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-top: 3px;
+        }
+        
+        .you{
+            width: 16%;
+            
+            float: left;
+            overflow: hidden;
+            margin-left: 15px;
+        }
+        .tupian1{
+            width: 100%;
+            margin-top: 40px;
+        }
+        .jzgd{
+            border:rgb(231, 134, 69) solid 2px;
+            float: left;
+            margin-left: 420px;
+            background-color: orange ;
+            border-radius: 7px;
+            margin-top: 50px;
+        }
+        .jzgd h2 a{
+            text-decoration: none;
+            color: #000;           
+        }
+        .jzgd h2 a:hover{
+            color: rgb(201, 41, 41);
+            background-color: rgb(230, 227, 227);
+        }
+        .footer{ 
+            width: 100%;
+            background: rgb(247, 135, 8);
+            margin-top: 62px;
+            text-align: center;
+            color: #000000;
+            line-height: 21px;
+            font-size: 13px;
+            float: left;
+            padding: 20px 0;
+        }
+        .footer  span{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="chongaishequ">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="gg">
+                <img src="../img/宠爱社区/广告1.png"> 
+
+            </div>
+            <div class="zuo">
+                <ul>
+                    <li><a href="chongaishequ.html">养宠问答</a></li>
+                    <li><a href="ershoujiaoyi.html">二手交易</a></li>
+                    <li><a href="jingyanfenxiang.html">经验分享</a></li>
+                    <li><a href="jiuzhuzhongchou.html">救助众筹</a></li>
+                </ul>
+            </div>
+            <div class="middle">
+                <ul class="middleul">
+                    <!-- 1 -->
+                    <li>
+                        <h3><a href="zhongchou1.html">【众筹】救助细小病毒感染的小狗</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片1.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片2.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片3.jpg"></a>
+                        <p>吴小朵 05-06 06:53</p>
+                    </li>
+                    <!-- 2 -->
+                    <li>
+                        <h3><a href="#">【众筹】大学生救助校园生病流浪猫，希望大家帮帮忙，让猫猫可以健康回到校园</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片4.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片5.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片6.jpg"></a>
+                        <p>李科玲 04-14 12:33</p>
+                    </li>
+                    <!-- 3 -->
+                    <li>
+                        <h3><a href="#">【众筹】毕业生救助流浪猫，希望大家能一起帮帮忙</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片7.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片8.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片9.jpg"></a>
+                        <p>流浪猫救助 11-27 20:59</p>
+                    </li>
+                    <!-- 4 -->
+                    <li>
+                        <h3><a href="#">【众筹】猫咪炎症治疗了三天，求各位好心人帮帮忙</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片10.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片11.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片12.jpg"></a>
+                        <p>冯雨欣 08-02 12:35</p>
+                    </li>
+                    <!-- 5 -->
+                    <li>
+                        <h3><a href="#">【【众筹】急需救助被遗弃得细小的比熊</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片13.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片14.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片15.jpg"></a>
+                        <p>刘岂凡 07-15 10:43</p>
+                    </li>
+                    <!-- 6 -->
+                    <li>
+                        <h3><a href="#">【众筹】流浪猫骨折望救助！</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片16.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片17.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片18.jpg"></a>
+                        <p>小鲤鱼 02-26 13:00</p>
+                    </li>
+                    <!-- 7 -->
+                    <li>
+                        <h3><a href="#">【众筹】左前肢无力腕关节损伤的校园流浪猫小白！</a></h3>
+                        <a href="#"><img src="../img/救助众筹/图片19jpg.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片20.jpg"></a>
+                        <a href="#"><img src="../img/救助众筹/图片21.jpg"></a>
+                        <p>李俊辉 03-06 14:51</p>
+                    </li>
+                    <div class="jzgd">
+                        <h2><a href="#">加&nbsp载&nbsp更&nbsp多</a></h2>
+                    </div>
+                    
+                </ul>
+
+            </div>
+            <div class="you">
+                <img class="tupian1" src="../img/经验分享/长图1.jpg">
+                <img class="tupian1" src="../img/救助众筹/长图.jpg">
+                <img class="tupian1" src="../img/二手交易/长图1.png">
+            </div>
+        </div>
+        <div class="footer">
+            <span>宠物资讯 | <span>社区精选</span>  | <span>管理团队</span>  | <span> 下载客户端</span> | 会员服务 <span> | 宠物送养</span> | <span> 宠物领养</span> | <span> 关于我们</span>| <span> 宠爱缘</span></span>
+            <p>商务合作邮箱:2569975374@QQ.com 客服电话:89736429</p>
+            <p>网站展示的宠物及品牌信息和数据，是基于互联网大数据及品牌方的公开信息，收集整理客观呈现，仅提供参考使用，不代表网站支持观点；
+              如有侵权、错误信息，请及时联系我们更正或删除！</p>
+            <p>宠爱缘网站版权所有<p>
+            <p> QQ:2569975374  备案号: 沪GHJ备16030722号-7<p>
+            <p>©2014 - 2024        联系我们免责声明<p>
+        </div>
+    </div>
+</body>
+</html>

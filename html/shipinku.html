@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    ul,li,p,span,a,h3,h2,h4{
+        padding: 0;
+        margin: 0;
+    }
+    .yongpindaquan{
+        width: 100%;
+        position: absolute;/*绝对定位*/
+        top:0;
+        left: 0;
+        zoom: 1;
+    }
+    .daohang{
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: rgb(247, 135, 8);
+        height: 70px;
+        position: fixed;
+        top: 0;
+        padding-left: 30px;
+        z-index: 9999999;
+    }
+    .daohang img{
+        width: 130px;
+        float: left;
+        padding-top:10px ;
+    }
+    .daohang ul{
+        overflow: hidden;
+        padding-left: 30px;
+        height: 70px;
+        float: left;
+    }
+    .daohang li{
+        float: left;
+        list-style: none;
+        margin-left: 30px;
+        padding-left: 1px;
+        padding-right: 10px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .daohang li a{
+        text-decoration: none;
+        color:rgb(0, 0, 0);
+    }
+    .daohang li a:hover{
+        color: rgb(247, 226, 195);
+        font-weight: bolder;
+        text-decoration-line: underline;
+    }
+    .sousuo{
+        float: left;
+        padding-top: 20px;
+    }
+    .search{
+        width: 150px;
+        height: 25px;
+        background-size: 15px;
+        background-repeat: no-repeat;
+        margin-left:  50px;
+        background-position: 10px 10px;
+        font-size: 12px;
+        border: none;
+        border-radius: 20px;
+    }
+    .search:focus{
+        outline:none;
+    }
+    .sousuo1{
+        width: 60px;
+        border: none;
+        font-size:12px;
+        border-radius: 20px;
+        height: 23px;
+    }
+    .sousuo1:hover{
+        background:  #f5b53f;
+    }
+    .denglu{
+        float: left;
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+
+    .denglu img{      
+        width: 50px;
+        float: left;
+        margin-left: 40px;
+        padding-top: 5px;
+    }
+    .daohang2{
+        overflow: hidden;
+        margin-top: 110px;
+        width: 100%;
+        float: left;
+    }
+    .daohang2ul{
+        width: 100%;
+        overflow: hidden;
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+    .daohang2ul li{
+        float: left;
+        width: 60px;
+        margin-right: 15px;
+        font-size: 18px;
+        list-style: none;
+        border: orangered solid 1px;
+        background-color: rgb(255, 153, 0);
+        border-radius: 10px;
+    }
+    .daohang2ul li a{
+        text-decoration: none;
+        color:black;
+    }
+    .daohang2ul li a:hover{
+        color: rgb(227, 230, 107);
+    }
+    .pinpai{
+        overflow: hidden;
+        float: left;
+        width: 100%;
+    }
+    .pinpaiul{
+        overflow: hidden;
+        float: left;
+        width: 100%;
+        margin-left: 50px;
+    }
+    .pinpaiul li{
+        width: 200px;
+        margin-right: 10px;
+        margin-left: 10px;
+        float: left;
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    .pinpaiul img{
+        width: 200px;
+    }
+    .pinpaiul img:hover{
+        transform: scale(1.1);
+    }
+    .wenzi{
+        width: 200px;
+        color:rgb(143, 139, 139);
+        background-color: gainsboro;
+        margin-top: -5px;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .wenzi a{
+        text-align: center;
+        text-decoration: none;
+        color: black;
+
+    }
+
+    .pinpaiul a:hover{
+        color:orange;
+    }
+    .bottom{
+        overflow: hidden;
+        float: left;
+        padding-bottom: 40px;
+    }
+    .bottomul{
+        margin-left: 450px;
+        margin-top: 35px;
+        width: 100%;
+        text-align: center;
+        
+    }
+    .pinpaiul img{
+        width: 200px;
+        height: 200px;
+    }
+    .bottomul li {
+        float: left;
+        list-style: none;
+        margin-left: 50px;
+        border: orange solid 1px;
+        padding: 0 10px;
+
+    }
+    .bottomul li:nth-child(1){
+        background-color: rgb(255, 239, 209);
+    }
+    .bottomul li a{
+        font-size: 25px;
+        text-decoration: none;
+        color: #000;
+    }
+
+</style>
+</head>
+<body>
+    <div class="yongpindaquan">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="daohang2">
+            <ul class="daohang2ul">
+                <li><a href="yongpindaquan.html">品牌库</a></li>
+                <li><a href="shipinku.html">食品库</a></li>
+            </ul>
+        </div>
+        <div class="pinpai">
+            <ul class="pinpaiul">
+                <li>
+                    <a href="#"><img src="../img/食品库/图片1.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">新食代虾肉味成猫幼猫主粮泰国进口通用型小鱼干零食猫粮480g/3d</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片2.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">皇家室内I27猫粮 成猫 英短蓝猫美短波斯猫通用型成猫粮2kg*2袋</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片3.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">皇家官方旗舰店 营养成猫猫粮F32 0.4KG*4呵护健康维持体况</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片4.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">珍致猫罐头主食进口白肉幼猫成猫通用湿粮猫咪零食85g24罐头整箱</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片5.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">风干无谷牛肉猫粮400g滋益巅峰进口天然猫粮（数据测试)</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片6.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">爱肯拿Acana成猫幼猫粮无谷农场盛宴鸡肉猫粮1.8kg/包（数据测试）</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片7.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">Petcurean Go!无谷九种肉全猫粮4磅猫幼猫粮无谷农场（数据测试）</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片8.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">加拿大Petcurean Now进口无谷成猫猫粮猫主食6个月以上8磅数据测试</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片9.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">加拿大进口go九种肉鸡肉三种鱼天然无谷幼猫成猫粮8/16磅</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片10.png"></a>
+                    <div class="wenzi">
+                        <a href="#">加拿大渴望进口成猫幼猫鸡肉天然无谷爱猫猫粮全阶段1.8KG（数据测试）</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片11.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">比瑞吉狗粮小型犬成犬粮1.5kg泰迪贵宾吉娃娃法斗巴哥比熊通用粮（数据测 </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片12.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">原装进口 欧帝亿IMPERIAL PAW 中型犬幼犬鸡肉配方粮 7.5kg（数据测试）</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片13.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">Applaws爱普士新西兰狗罐头170*4罐装 进口狗零食狗湿粮 多味可选</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片14.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">7日宠粮 味它边境边牧狗粮成犬幼犬通用型10kg肉松美毛去泪痕健体（测试数</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片15.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">麦富迪 牛肉双拼系列 贵宾专用牛肉双拼成犬粮 2kg（数据测试）</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片16.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">凯锐思泰迪萨摩耶金毛拉布拉多哈士奇狗粮小型犬幼犬成犬通用型粮（测试数</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片17.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">力朗狗粮 德牧马犬边牧边境牧羊犬成犬粮 中大型天然犬主粮2.5kg</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片18.jpg"></a>
+                    <div class="wenzi">
+                        <a href="#">力朗法斗狗粮5斤 法国斗牛犬英斗英牛法牛斗牛犬幼犬斗牛专用粮</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片19.png"></a>
+                    <div class="wenzi">
+                        <a href="#">皇家SNZ25成犬粮6kg 小型犬雪纳瑞专用宠物狗主粮（数据测试）</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="../img/食品库/图片20.png"></a>
+                    <div class="wenzi">
+                        <a href="#">比瑞吉泌尿道调理成犬狗粮2kg宠物狗狗处方粮配方犬主粮泰迪金毛（数据测</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <ul class="bottomul">
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">尾页</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

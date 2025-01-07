@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        .index{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+		.zuo{
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 12%;
+            height: 380px;
+            overflow: hidden;
+            border: rgb(228, 216, 227) solid 2px;
+            background-color: rgb(255, 147, 58);
+            margin-top: 100px;
+            margin-left:30px;
+
+       }
+		.zuo p{
+            font-size:35px;
+            font-weight:bolder;
+            margin-left:100px;
+        }
+		.zuo ul{
+            
+            margin-left: 40px;
+         
+        }
+		.zuo ul li{
+            margin-top:20px;
+            font-size:18px;
+            /* font-weight:350; */
+            list-style: none;
+        }
+		.zuo li a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .zuo li a:hover{
+            color:gainsboro;
+        }
+        .you{
+            float: left;
+            width: 83%;
+            margin-left: 10px;
+        }
+        .youul{
+            overflow: hidden;
+            float: left;
+            margin-top: 105px;
+            width: 100%;
+            
+        }
+        .you li{
+            width: 23%;
+            margin-right: 10px;
+            float: left;
+            overflow: hidden;
+            border-radius: 7px;
+            padding-bottom: 10px;
+            background: #ececec;
+            display: block;
+            height: 350px;
+            margin-bottom: 20px;
+        }
+
+        .youlitop,.youlimiddle,.youlibottom{
+            float: left;
+            width: 100%;
+            overflow: hidden;
+        }
+        .youlitop{
+            padding: 20px 0 0 20px;
+        }
+        .youlitop img{
+            width: 40px;
+            float: left;
+            border-radius: 5px;
+            
+        }
+        .youlitop h4{
+            float: left;
+            padding-left: 10px;
+
+        }
+        .youlitop p{
+            float: left;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 14px;
+
+        }
+        .youlimiddle{
+            overflow: hidden;
+            width: 100%;
+            margin-top: 20px;
+
+        }
+        .youlimiddle img{
+            width: 90%;
+            float: left;
+            margin-left: 5%;
+            height: 200px;
+        }
+        .youlimiddle p{
+            float: left;
+            width: 100%;
+            margin-left: 5%;
+            font-size: 14px;
+            color: #525252;
+        }
+        .youlibottom{
+            float: left;
+            width: 100%;
+            margin-left: 5%;
+        }
+        .youlibottom span{
+            margin-left: 10px;
+            font-size: 12px;
+            color: red;
+        }
+        .youlibottom span:nth-child(1){
+            margin-left: 0px;
+        }
+        .jzgd{
+            border:rgb(231, 134, 69) solid 2px;
+            float: left;
+            margin-left: 420px;
+            background-color: orange ;
+            border-radius: 7px;
+            margin-top: 50px;
+        }
+        .jzgd h2 a{
+            text-decoration: none;
+            color: #000;           
+        }
+        .jzgd h2 a:hover{
+            color: rgb(201, 41, 41);
+            background-color: rgb(230, 227, 227);
+        }
+        .footer{ 
+            width: 100%;
+            background: rgb(247, 135, 8);
+            margin-top: 62px;
+            text-align: center;
+            color: #000000;
+            line-height: 21px;
+            font-size: 13px;
+            float: left;
+            padding: 20px 0;
+        }
+        .footer  span{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="chongwuhuodong">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="zuo">
+            <ul>
+                <li><a href="chongwuhuodong.html">宠物领养</a></li>
+                <li><a href="chongwusonggyang.html">宠物送养</a></li>
+                <li><a href="chongwuzoushi.html">宠物走失</a></li>
+                <li><a href="liulangxunzhu.html">流浪寻主</a></li>
+                <li><a href="#">相亲配对</a></li>
+                <li><a href="#">友情转让</a></li>
+                <li><a href="#">宠物专车</a></li>
+                <li><a href="#">宠友租房</a></li>
+            </ul>
+        </div>
+        <div class="you">
+            <ul class="youul">
+                <!-- 1 -->
+                <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像1.jpg" class="tx">
+                        </a>
+                        <h4>晓晨</h4>
+                        <p>奇奇今年刚刚满一岁，性格活波</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片1.png" class="nr">
+                        <p>狗狗 0岁 母</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>未绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                <!-- 2 -->
+                <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像2.jpg" class="tx">
+                        </a>
+                        <h4>洲洲</h4>
+                        <p>柯基狗狗  四个月</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片2.png" class="nr">
+                        <p>狗狗 0岁 公</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>未免疫</span><span>未绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                <!-- 3 -->
+                <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像3.jpg" class="tx">
+                        </a>
+                        <h4>刘小楠楠</h4>
+                        <p>
+                            7个月大,打完疫苗并且绝育</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片3png.png" class="nr">
+                        <p>狗狗 0岁 母</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>已绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                 <!-- 4 -->
+                 <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像4.jpg" class="tx">
+                        </a>
+                        <h4>孤独的野狼</h4>
+                        <p>
+                            领养价格可谈，全家喜欢猫猫</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片4.png" class="nr">
+                        <p>狗狗 1岁 母</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>已绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                 <!-- 5 -->
+                 <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像5.jpg" class="tx">
+                        </a>
+                        <h4>整天嘻嘻哈哈</h4>
+                        <p>有点泪痕，不介意可无偿领养</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片5.png" class="nr">
+                        <p>狗狗 1岁 公</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>已绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                 <!-- 6 -->
+                 <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像6.jpg" class="tx">
+                        </a>
+                        <h4>我爱小动物</h4>
+                        <p>活泼可爱 免费领养 仅支持自提</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片6.png" class="nr">
+                        <p>狗狗 0岁 公</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>未绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                 <!-- 7 -->
+                 <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像7.jpg" class="tx">
+                        </a>
+                        <h4>豆豆animal</h4>
+                        <p>很可爱的泰迪，能陪伴铲屎官</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片7.png" class="nr">
+                        <p>狗狗 0岁 母</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>未绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                 <!-- 8 -->
+                 <li>
+                    <div class="youlitop">
+                        <a href="#">
+                            <img src="../img/宠物活动/头像8.jpg" class="tx">
+                        </a>
+                        <h4>别看我id</h4>
+                        <p>银渐层（带金血），粘人可爱</p>
+                    </div>
+                    <div class="youlimiddle">
+                        <img src="../img/宠物活动/图片8.png" class="nr">
+                        <p>猫猫 1岁 母</p>
+                    </div>
+                    <div class="youlibottom">
+                        <span>已免疫</span><span>未绝育</span><span>已驱虫</span>
+                    </div>
+                </li>
+                <div class="jzgd">
+                    <h2><a href="#">加&nbsp载&nbsp更&nbsp多</a></h2>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <span>宠物资讯 | <span>社区精选</span> | <span>管理团队</span> | <span>下载客户端</span> | 会员服务 | <span>宠物送养</span> | <span>宠物领养</span> | <span>关于我们</span> | <span>领养E家</span></span>
+        <p>商务合作邮箱:1712029682@qq.com 客服电话:89736429</p>
+        <p>网站展示的宠物及品牌信息和数据，是基于互联网大数据及品牌方的公开信息，收集整理客观呈现，仅提供参考使用，不代表网站支持观点；
+            如有侵权、错误信息，请及时联系我们更正或删除！</p>
+        <p>领养E家版权所有</p>
+        <p>QQ:1712029682  备案号: 沪GHJ备16030722号-7</p>
+        <p>©2014 - 2024        联系我们免责声明</p>
+    </div>
+    </div>
+</body>
+</html>

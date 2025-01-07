@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wode{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .fanbu{
+            overflow: hidden;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .zuo{
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 10%;
+            height: 440px;
+            overflow: hidden;
+            border: rgb(228, 216, 227) solid 2px;
+            background-color: rgb(240, 238, 238);
+            margin-top: 100px;
+            margin-left:10px;
+            overflow: hidden;
+            
+
+       }
+		.zuo p{
+            font-size:35px;
+            font-weight:bolder;
+            margin-left:100px;
+        }
+		.zuo ul{
+            margin-left: 25px;
+        }
+		.zuo ul li{
+            margin-top:20px;
+            font-size:18px;
+            font-weight:350;
+            list-style: none;
+            font-weight: bold;
+        }
+		.zuo li a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .zuo li a:hover{
+            color:rgb(255, 179, 66);
+        }
+        .top{
+           overflow: hidden;
+           float: left;
+           width: 82%;
+           padding-top: 100px;
+           margin-left: 50px;
+        }
+        .xinxi{
+            width: 100%;
+            float: left;
+            overflow: hidden;
+        }
+        .xinxileft,.xinxiright{
+            float: left;
+        }
+        .xinxileft{
+            width: 10%;
+            float: left;
+        }
+        .xinxiright{
+            float: left;
+            width: 60%;
+            margin-left: 5px;
+        }
+        .xinxileft img{
+            width: 80px;
+            float: left;
+            border-radius:50%;
+        }
+        .xinxiright h4{
+            float: left;
+            margin-left: 5px;
+            width: 70%;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 20px;
+        }
+        .xinxiright img{
+            width: 280px;
+            margin-top: 5px;
+        }
+        .xx{
+            width: 70%;
+            overflow: hidden;
+            margin-left: 40px;
+            float: left;
+            
+        }
+        .xx p,.xx span{
+            width: 15%;
+            float: left; 
+            margin-top: 30px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .xx p a{
+            text-decoration: none;
+            color: orange;
+            font-weight: normal;
+            font-weight: bold;
+        }
+        .xx span a{
+            text-decoration: none;
+            color: #000;
+        }
+        .xx p a:hover{
+            color: rgb(99, 93, 93);
+        }
+        .fb{
+            overflow: hidden;
+            width: 100%;
+        }
+        .fb{
+            width: 70%;
+            padding-top: 30px;
+            margin-left: 60px;
+            float: left;
+            overflow: hidden;
+            border: 1px solid green;
+            margin-top: 10px;
+            
+        }
+        .fbtop{
+            background-color: rgb(245, 239, 239);
+        }
+        .fbtop p{
+            margin-top: -30px;
+            font-size: 13px;
+        }
+        .fbleft{
+            width: 36%;
+            float: left;
+            overflow: hidden;
+            padding-right: 120px;
+            border-right: 1px solid rgb(233, 233, 233);
+            margin: 15px 0;
+            /* margin-right: 10px; */
+        }
+        .fbleft img{
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            float: left;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        .fbleft h4{
+            float: left;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        .fbleft p{
+            margin-top:30px;
+            float: left;
+            color: rgb(194, 189, 189);
+            width: 50%;
+            margin: 0;
+            font-size:14px;
+            margin-left: 14px;
+        }
+        .fbright{
+            width: 45%;
+            float: left;
+            margin-left: 15px;
+            padding: 15px 0;
+        }
+        .fbright h4{
+            font-size: 13px;
+        }
+        .fbrightul {
+            float: right;
+            margin-right: 90px;
+            margin-top: -10px;
+            width: 20%;
+            /* border:2px soild rgb(158, 4, 4); */
+            
+        }
+        .fbrightul li{
+            margin-top: 10px;
+            width: 70px;
+            height: 20px;
+            border:2px solid rgb(253, 141, 36);
+            padding: 5px;
+        }
+        .fbrightul li a{
+            text-decoration: none;
+            color: rgb(253, 141, 36);
+            text-align: center;
+           
+        }
+        .fbrightul li a:hover{
+            color: rgb(109, 105, 105);
+        }
+    </style>
+</head>
+<body>
+    <div class="fabu">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="zuo">
+            <ul>
+                <li><a href="wode.html">个人中心</a></li>
+                <li><a href="fabu.html">我的发布</a></li>
+                <li><a href="huiyuan.html">我的会员</a></li>
+                <li><a href="#">交易记录</a></li>
+        </div>
+        <div class="top">
+            <div class="xinxi">
+                <div class="xinxileft">
+                    <img src="../img/宠物送养/头像1.jpg"> 
+                </div>
+                <div class="xinxiright">
+                    <h4>明明</h4>
+                    <img src="../img/发布/1.png">
+                </div> 
+            </div> 
+            
+        </div>
+        <div class="xx">
+            <p><a href="#">最近发布的消息</a></p>
+            <span><a href="">我收藏的消息</a></span>
+        </div>
+        <div class="fb">
+            <div class="fbtop">
+                <p>信息号：57495017453704</p>
+            </div>
+            <div class="fbleft">
+                <img src="../img/二手交易/问答1.jpg">
+                <h4>猫粮-天然粮</h4>
+                <p>2024-02-29 12:10</p>
+                <p>大连- 宠物 - 宠物用品/食品</p>
+            </div>
+            <div class="fbright">
+                <h4>已发布，7天内完成认证方可展示</h4>
+                <ul class="fbrightul">
+                    <li><a href="#">立即认证</a></li>
+                    <li><a href="#">彻底删除</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="fb">
+            <div class="fbtop">
+                <p>信息号：57495017453704</p>
+            </div>
+            <div class="fbleft">
+                <img src="../img/二手交易/问答6.jpg">
+                <h4>大袋猫粮又没有宠友需要</h4>
+                <p style="margin-left: 15px;">2024-02-21 08:43</p>
+                <p style="margin-left: 15px;">大连- 宠物 - 宠物用品/食品</p>
+            </div>
+            <div class="fbright">
+                <h4>已发布，7天内完成认证方可展示</h4>
+                <ul class="fbrightul">
+                    <li><a href="#">立即认证</a></li>
+                    <li><a href="#">彻底删除</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

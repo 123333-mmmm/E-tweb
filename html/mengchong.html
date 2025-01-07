@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        .index{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .remenchongtu{
+            overflow: hidden;
+            margin-top: 110px;
+            width: 100%;
+        }
+        .rmcttop{
+            width: 100%;
+            overflow: hidden;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .rmcttop img{
+            float: left;
+            width: 40px;
+            margin-right: 15px;
+        }
+        .rmcttop h3{
+            overflow: hidden;
+            font-size: 29px;
+            color: rgb(250, 142, 53); 
+            float: left;   
+        }
+        .rmcttop p{
+            float: left;
+            color: rgb(117, 117, 206);
+            margin-left:50px;
+            margin-top: 10px;
+        }
+        .rmcttop p a,.rmcttop span a{
+            text-decoration: none;
+            color: rgb(117, 117, 206);
+        }
+        .rmcttop p a:hover{
+            color: #000;
+        }
+        .rmcttop span{
+            float: left;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        .rmcttop span a:hover{
+            color: #000;
+        }
+        .rmctbottmul{
+            width: 100%;
+            float: left;
+            overflow: hidden;
+        }
+        .rmctbottomul li{
+            overflow: hidden;
+            float: left;
+            margin-left: 70px;
+            margin-bottom: 30px;
+
+        }
+        .rmctbottomul li img{
+            width: 300px;
+            height: 180px;
+            margin-bottom: 10px;
+        }
+        .rmctbottomul li h4 a{
+            color: black;
+            text-decoration: none;
+        }
+        .rmctbottomul li h4 a:hover{
+            color: rgb(250, 142, 53); ;
+        }
+        .rmctbottomul li p{
+            font-size: 13px;
+            color: rgb(185, 182, 182);
+            margin-top: 10px;
+        }
+        .rmctbottomul li p span{
+            float: right;
+        }
+        .remenshipin{
+            overflow: hidden;
+            margin-top: 110px;
+            width: 100%;
+        }
+        .rmsptop{
+            width: 100%;
+            overflow: hidden;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .rmsptop img{
+            float: left;
+            width: 40px;
+            margin-right: 15px;
+        }
+        .rmsptop h3{
+            overflow: hidden;
+            font-size: 29px;
+            color: rgb(250, 142, 53); 
+            float: left;   
+        }
+        .rmsptop p{
+            float: left;
+            color: rgb(117, 117, 206);
+            margin-left:50px;
+            margin-top: 10px;
+        }
+        .rmsptop p a,.rmsptop span a{
+            text-decoration: none;
+            color: rgb(117, 117, 206);
+        }
+        .rmsptop p a:hover{
+            color: #000;
+        }
+        .rmsptop span{
+            float: left;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+        .rmsptop span a:hover{
+            color: #000;
+        }
+
+
+        .rmspbottmul{
+            width: 100%;
+            float: left;
+            overflow: hidden;
+        }
+        .rmspbottomul li{
+            overflow: hidden;
+            float: left;
+            margin-left: 70px;
+            margin-bottom: 30px;
+
+        }
+        .rmspbottomul li video{
+            width: 220px;
+            height: 180px;
+            margin-bottom: 10px;
+        }
+        .rmspbottomul li h4 a{
+            color: black;
+            text-decoration: none;
+        }
+        .rmspbottomul li h4 a:hover{
+            color: rgb(250, 142, 53); ;
+        }
+        .rmspbottomul li p{
+            font-size: 13px;
+            color: rgb(185, 182, 182);
+            margin-top: 10px;
+        }
+        .rmspbottomul li p span{
+            float: right;
+        }
+        .footer{ 
+            width: 100%;
+            background: rgb(247, 135, 8);
+            margin-top: 62px;
+            text-align: center;
+            color: #000000;
+            line-height: 21px;
+            font-size: 13px;
+            float: left;
+            padding: 20px 0;
+        }
+        .footer  span{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="mengchong">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="remenchongtu">
+            <div class="rmcttop">
+                    <img src="../img/萌宠/热门宠图.png">
+                    <h3>热门宠图</h3>
+                    <p><a href="#">喵星人</a></p>  
+                    <span><a href="#">汪星人</a></span>
+            </div>
+            <div class="rmctbottom">
+                <ul class="rmctbottomul">
+                    <li>
+                        <a href="#"><img src="../img/萌宠/宠图1.png"></a>
+                        <h4><a href="#">猫咪变大后</a></h4>
+                        <p>2024-02-11 13:53<span>2528浏览</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../img/萌宠/宠图2.png"></a>
+                        <h4><a href="#">这些宠物都是戏精阿～</a></h4>
+                        <p>2023-02-02 08:26<span>678浏览</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../img/萌宠/宠图3.png"></a>
+                        <h4><a href="#">一只外表平常的黑狗，打扮起来却让人惊艳～</a></h4>
+                        <p>2023-03-01 11:21<span>4335浏览</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../img/萌宠/宠图4.png"></a>
+                        <h4><a href="#">那些网路常见的猫</a></h4>
+                        <p>2023-03-09 18:33<span>976浏览</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../img/萌宠/宠图5.png"></a>
+                        <h4><a href="#">变成Ｑ版插画的喵星人</a></h4>
+                        <p>2023-03-14 10:15<span>675浏览</span></p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="../img/萌宠/宠图6.png"></a>
+                        <h4><a href="#">Woodstock的奇幻冒险</a></h4>
+                        <p>2023-03-20 14:13<span>1314浏览</span></p>
+                    </li>
+                </ul>
+
+            </div>
+        <div class="remenshipin">
+            <div class="rmsptop">
+                <img src="../img/萌宠/热门视频.png">
+                    <h3>热门视频</h3>
+                    <p><a href="#">喵星人</a></p>  
+                    <span><a href="#">汪星人</a></span>
+            </div>
+            <div class="rmspbottom">
+                <ul class="rmspbottomul">
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频1.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">拉布拉多怕冷吗</a></h4>
+                        <p>2020-06-06 14:57<span>1898人浏览</span></p>
+                    </li>
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频2.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">这胖乎乎的，连踩奶都踩不住了</a></h4>
+                        <p>2024-05-30 16:17<span>8765人浏览</span></p>
+                    </li>
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频3.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">我只是一只给铲屎的暖床的工具人</a></h4>
+                        <p>2024-01-17 08:45<span>1123人浏览</span></p>
+                    </li>
+                    <li style="margin-left: 50px;">
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频4.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">猫咪喜欢吃啥</a></h4>
+                        <p>2023-12-16 09:39<span>8639人浏览</span></p>
+                    </li>
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频5.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">连金毛都舍得送花诶</a></h4>
+                        <p>2024-04-13 23:57<span>1537人浏览</span></p>
+                    </li>
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls" ><source src="../img/萌宠/视频6.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">你看看喵星人的手多欠</a></h4>
+                        <p>2024-11-05 16:17<span>3563人浏览</span></p>
+                    </li>
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频7.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">给二哈洗澡还一脸不情愿</a></h4>
+                        <p>2024-01-11 11:11<span>8364人浏览</span></p>
+                    </li>
+                    <li>
+                        <video width="300px" autoplay="autoplay"controls="controls"> <source src="../img/萌宠/视频8.mp4" type="video/mp4"></source> </video>
+                        <h4><a href="#">反应慢半拍的小奶猫</a></h4>
+                        <p>2023-08-18 17:17<span>1638人浏览</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <span>宠物资讯 | <span>社区精选</span>  | <span>管理团队</span>  | <span> 下载客户端</span> | 会员服务 <span> | 宠物送养</span> | <span> 宠物领养</span> | <span> 关于我们</span>| <span> 宠爱缘</span></span>
+            <p>商务合作邮箱:2569975374@QQ.com 客服电话:89736429</p>
+            <p>网站展示的宠物及品牌信息和数据，是基于互联网大数据及品牌方的公开信息，收集整理客观呈现，仅提供参考使用，不代表网站支持观点；
+              如有侵权、错误信息，请及时联系我们更正或删除！</p>
+            <p>宠爱缘网站版权所有<p>
+            <p> QQ:2569975374  备案号: 沪GHJ备16030722号-7<p>
+            <p>©2014 - 2024        联系我们免责声明<p>
+        </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wode{
+            width: 100%;
+            position: absolute;/*绝对定位*/
+            top:0;
+            left: 0;
+            zoom: 1;
+        }
+        .fanbu{
+            overflow: hidden;
+        }
+        .daohang{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999;
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .gg{
+            overflow-x: hidden;
+            width: 100%;
+        }
+        .gg img{
+            margin-top: 80px;
+            margin-left: 10px;
+            float: left;
+            height: 100px;
+        }
+        .nr{
+            width: 100%;
+            overflow: hidden;
+        }
+        .nrleft{
+            width: 70%;
+            float: left;
+            border: rgb(216, 215, 213) solid 1px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            border-radius: 2%;
+        }
+        .nrleft h2{
+            margin-top: 20px;
+            font-size: 20px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .nrleft span{
+            color: rgb(197, 193, 193);
+            font-size: 14px;
+            margin-left: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            /* border-bottom:steelblue solid 1px; */ 
+        }
+        .wz{
+            border-top: rgb(172, 173, 173) solid 1px;
+            width: 90%;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .wz p{
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .wz span{
+            color: rgb(211, 71, 71);
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .tp img{
+            width: 250px;
+            height: 300px;
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+        .tp p{
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .lianxi{
+            border-top: rgb(172, 173, 173) solid 1px;
+            width: 90%;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .lianxi p{
+            color: rgb(146, 141, 141);
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .nrright{
+            width: 25%;
+            height: 300px;
+            border: rgb(216, 215, 213) solid 1px;
+            border-radius: 2%;
+            float: left;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        .nrright h3{
+            margin-top: 10px;
+            margin-left: 10px;
+
+        }
+        .nrright1 img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+        .nrright1 h3{
+            color: rgb(243, 121, 50);
+            margin-left: 110px;
+        }
+        .zy{
+            border: tomato solid 1px;
+            border-radius: 2px;
+            width: 65%;
+            margin-top: 20px;
+            margin-left: 50px;
+        }
+        .zy:hover{
+            background-color: rgb(247, 165, 57);
+        }
+        .zy p{
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        .zy a{
+            text-decoration:none;
+        }
+        .footer{ 
+            width: 100%;
+            background: rgb(247, 135, 8);
+            margin-top: 62px;
+            text-align: center;
+            color: #000000;
+            line-height: 21px;
+            font-size: 13px;
+            float: left;
+            padding: 20px 0;
+        }
+        .footer  span{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="sy1">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul class="daohang1">
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="gg">
+            <a href="#"><img src="../img/送养1/top.png"> </a>
+            <a href="#"><img src="../img/index/logo.png"> </a>
+        </div>
+        <div class="nr">
+            <div class="nrleft">
+                <h2>弗列加特70%成猫鲜肉粮，鸡肉味，双十一优惠价买的8kg...</h3>
+                <span>浏览：23327    刷新：2023-12-28 15:25</span>
+                <div class="wz">
+                    <p>物品名称 : <span>成猫粮</span></p>
+                    <p>购入价格 : <span>370</span></p>
+                    <p>转让价格 : <span>42~240</span></p>
+                </div>
+                <div class="tp">
+                    <img src="../img/交易1/1.png">
+                    <img src="../img/交易1/2.png">
+                    <p>
+                        弗列加特70%成猫鲜肉粮，鸡肉味，双十一优惠价买的8kg，里面是1kg的小袋装，已拆封两袋，剩下六袋共12斤240出，可单买42元一代，长沙天心区理工大学总部基地附近自提，也可雨花区红星安置小区附近自提，日期是10月10号的，比较新鲜
+                    </p>
+                </div>
+                <div class="lianxi">
+                    <p>联系人：困困</p>
+                    <p>联系电话：15787643456</p>
+                </div>
+            </div>
+            <div class="nrright">
+                <h3>发布者</h3> 
+                <div class="nrright1">
+                    <img src="../img/交易1/头像.jpg">
+                    <h3>困困</h3>
+                    <div class="zy">
+                        <a href="#"><p>TA的主页</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>宠物资讯 | <span>社区精选</span> | <span>管理团队</span> | <span>下载客户端</span> | 会员服务 | <span>宠物送养</span> | <span>宠物领养</span> | <span>关于我们</span> | <span>领养E家</span></span>
+            <p>商务合作邮箱:1712029682@qq.com 客服电话:89736429</p>
+            <p>网站展示的宠物及品牌信息和数据，是基于互联网大数据及品牌方的公开信息，收集整理客观呈现，仅提供参考使用，不代表网站支持观点；
+              如有侵权、错误信息，请及时联系我们更正或删除！</p>
+            <p>领养E家版权所有</p>
+            <p>QQ:1712029682  备案号: 沪GHJ备16030722号-7</p>
+            <p>©2014 - 2024        联系我们免责声明</p>
+        </div>
+    </div>
+</body>
+</html>

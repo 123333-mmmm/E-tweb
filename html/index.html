@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../font_4432852_ublnkqkvwt/iconfont.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,li,p,span,a,h3,h2,h4{
+            padding: 0;
+            margin: 0;
+        }
+        .index{
+            width: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
+            zoom: 1;/*层级*/
+        }
+        .daohang{
+            /* overflow: hidden; */
+            width: 100%;
+            background-color: rgb(247, 135, 8);
+            height: 70px;
+            position: fixed;
+            top: 0;
+            padding-left: 30px;
+            z-index: 9999999; /*层级*/
+        }
+        .daohang img{
+            width: 130px;
+            float: left;
+            padding-top:10px ;
+        }
+        .daohang ul{
+            overflow: hidden;
+            padding-left: 30px;
+            height: 70px;
+            float: left;
+        }
+        .daohang li{
+            float: left;
+            list-style: none;
+            margin-left: 30px;
+            padding-left: 1px;
+            padding-right: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .daohang li a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+        .daohang li a:hover{
+            color: rgb(247, 226, 195);
+            font-weight: bolder;
+            text-decoration-line: underline;
+        }
+        .sousuo{
+            float: left;
+            padding-top: 20px;
+        }
+        .search{
+            width: 150px;
+            height: 25px;
+            background-size: 15px;
+            background-repeat: no-repeat;
+            margin-left:  50px;
+            background-position: 10px 10px;
+            font-size: 12px;
+            border: none;
+            border-radius: 20px;
+        }
+        .search:focus{
+            outline:none;/*搜索无框*/
+        }
+        .sousuo1{
+            width: 60px;
+            border: none;
+            font-size:12px;
+            border-radius: 20px;
+            height: 23px;
+        }
+        .sousuo1:hover{
+            background:  #f5b53f;
+        }
+        .denglu{
+            float: left;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .denglu img{      
+            width: 50px;
+            float: left;
+            margin-left: 40px;
+            padding-top: 5px;
+        }
+        .banner{
+            /* overflow: hidden; */
+            /* width: 100%; */
+            margin: 0;
+            padding: 0;
+        }
+        .banner img{
+            width: 100%;
+             margin-top: 70px; 
+        }
+        .middle1{
+            overflow: hidden;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .chongjiexinwen,.jibingbaike{
+            /* width: 100%; */
+            overflow: hidden;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        .chongjiexinwen img,.jibingbaike img{
+            float: left;
+            width: 40px;
+            margin-right: 15px;
+        }
+        .chongjiexinwen h3,.jibingbaike h3{
+            overflow: hidden;
+            font-size: 29px;
+            color: rgb(250, 142, 53);    
+        }
+        #imgchange img{
+            margin: 0 auto;
+            width: 400px;
+            height: 300px;
+
+        }
+        #imgchange>img:nth-child(1){
+            display: block;
+        }
+        #imgchange>img:nth-child(2){
+            display: none;
+        }
+        #imgchange>img:nth-child(3){
+            display: none;
+        }
+        #imgchange>img:nth-child(4){
+            display: none;
+        }
+        #imgchange>img:nth-child(5){
+            display: none;
+        }
+        .cjxwleft,.cjxwmiddle,.cjxwright{
+            float: left;
+            width: 30%;
+            margin-right: 35px;
+            overflow: hidden;
+        }
+        .cjxwleft{
+            margin-left: 5px;
+        }
+        .cjxwright{
+            margin-right: 0px;
+            width: 32%;
+        }
+        .cjxwmiddletop,.cjxwmiddlebottom{
+            float: left;
+            width: 100%;
+        }
+        .cjxwmiddletop p{
+            text-align: justify;/*两端对齐*/
+        }
+        .cjxwtuijian{
+            overflow: hidden;
+            width: 100%;
+        }
+        .tuijian{
+            float: left;
+            padding: 5px 10px;
+            background: rgb(255, 148, 27);
+            border-radius: 15px 0 15px 0;
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+        .cjxwtuijian h4{
+            float: left;
+        }
+        .cjxwrighttop,.cjxwrightmiddle{
+            width: 100%;
+            float: left;
+        }
+        .cjxwrighttop span{
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cjxwrighttop span:nth-last-of-type(1){
+            color: rgb(255, 148, 27);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .cjxwrightmiddle li{
+            list-style:none;
+        }
+        .cjxwrightmiddle li span:nth-child(1){
+            color: #ffa600;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .cjxwrightmiddle li span:nth-child(2){
+            color: #9c9c9c;
+            font-size: 13px;
+            margin-left: 15px;
+        }
+        .cjxwtuijian h4{
+            margin-top: 5px;
+        }
+        .cjxwtuijian h4{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        } 
+        .cjxwtuijian h4 a:hover{
+            color: rgb(231, 139, 0);
+            text-decoration: none;
+
+        }
+        .cjxwmiddlebottom1 li a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        .cjxwmiddlebottom1 li a:hover{
+            color: rgb(231, 139, 0);
+            text-decoration: underline;
+        }
+        .cjxwmiddlebottom{
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 3px dotted rgb(255, 115, 0);
+        }
+        .cjxwrighttop{
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+        .middle2{
+            overflow: hidden;
+            width: 100%;
+        }
+        .yangchongchangshi{
+            /* width: 100%; */
+            overflow: hidden;
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+        .yangchongchangshi img{
+            float: left;
+            width: 40px;
+            margin-right: 15px;
+        }
+        .yangchongchangshi h3{
+            overflow: hidden;
+            font-size: 29px;
+            color: rgb(250, 142, 53);  
+        }
+        .yccsleft{
+            overflow: hidden;
+            float: left;
+            width:70%;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .yccsright{
+            float: left;
+            width: 25%;
+        }
+        .yccsright img{
+            width: 100%;
+            margin-top: 30px;
+        }
+        .yccsul{
+            float: left;
+            overflow: hidden;
+        }
+        .yccsul li{
+            float: left;
+            overflow: hidden;
+            width: 32%;
+            list-style: none;
+        }
+        .yccsul a{
+            text-decoration: none;
+            color: #000;
+        }
+        .yccsul a:hover{
+            color: rgb(231, 139, 0);
+            text-decoration: underline;
+
+        }
+        .yccsul li img{
+            width: 240px;
+            height: 180px;
+        }
+        .yccsli{
+            margin-bottom: 20px;
+        }
+        .yccsul li p{
+            font-size: 20px;
+            float: left;
+            margin-left: 5px;
+        }
+        .yccsul li span{
+            float: left;
+            margin-left: 150px;
+            color: grey;
+            font-size: 15px;
+        }
+        .yccsul li a{
+            float: left;
+            overflow: hidden;
+        }
+        .nr{
+            width: 100%;
+        }
+        .nr li{
+            width: 100%;
+        }
+        .nr li a{
+            font-size: 14px;
+            color: grey;
+        }
+        #imgchange1 img{
+            margin: 0 auto;
+            width: 400px;
+            height: 300px;
+
+        }
+        #imgchange1>img:nth-child(1){
+            display: block;
+        }
+        #imgchange1>img:nth-child(2){
+            display: none;
+        }
+        #imgchange1>img:nth-child(3){
+            display: none;
+        }
+        #imgchange1>img:nth-child(4){
+            display: none;
+        }
+        #imgchange1>img:nth-child(5){
+            display: none;
+        }
+        .jbbkleft,.jbbkmiddle,.jbbkright{
+            float: left;
+            width: 30%;
+            margin-right: 35px;
+            overflow: hidden;
+        }
+        .jbbkleft{
+            margin-left: 5px;
+        }
+        .jbbkright{
+            margin-right: 0px;
+            width: 32%;
+        }
+        .jbbkmiddletop,.jbbkmiddlebottom{
+            float: left;
+            width: 100%;
+        }
+        .jbbkmiddletop p{
+            text-align: justify;
+        }
+        .jbbktuijian{
+            overflow: hidden;
+            width: 100%;
+        }
+        .tuijian1{
+            float: left;
+            padding: 5px 10px;
+            background: rgb(255, 148, 27);
+            border-radius: 15px 0 15px 0;
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+        .jbbktuijian h4{
+            float: left;
+           
+        }
+        .jbbktuijian h4 a{
+            color: #000;
+            text-decoration: none;
+        }
+        .jbbktuijian h4 a:hover{
+            color: rgb(255, 166, 0);
+            text-decoration: underline;
+        }
+        .cjxwtuijian h4 a{
+            color: #000;
+            text-decoration: none;
+        }
+        .cjxwtuijian h4 a:hover{
+            color: rgb(255, 166, 0);
+            text-decoration: underline;
+        }
+        .jbbkrighttop,.jbbkrightmiddle{
+            width: 100%;
+            float: left;
+        }
+        .jbbkrighttop span{
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .jbbkrighttop span:nth-last-of-type(1){
+            color: rgb(255, 148, 27);
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .jbbkrightmiddle li{
+            list-style:none;
+        }
+        .jbbkrightmiddle li span:nth-child(1){
+            color: #ffa600;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .jbbkrightmiddle li span:nth-child(2){
+            color: #9c9c9c;
+            font-size: 13px;
+            margin-left: 15px;
+        }
+        .jbbktuijian h4{
+            margin-top: 5px;
+        }
+        .jbbktuijian h4{
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        } 
+        .jbbktuijian h4 a:hover{
+            color: rgb(231, 139, 0);
+
+        }
+        .jbbkmiddlebottom1 li a{
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        .jbbkmiddlebottom1 li a:hover{
+            color: rgb(231, 139, 0);
+            text-decoration: underline;
+        }
+        .jbbkmiddlebottom{
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 3px dotted rgb(255, 115, 0);
+        }
+        .jbbkrighttop{
+            font-size: 20px;
+            margin-bottom: 17px;
+        }
+        .footer{ 
+            width: 100%;
+            background: rgb(247, 135, 8);
+            margin-top: 62px;
+            text-align: center;
+            color: #000000;
+            line-height: 21px;
+            font-size: 13px;
+            float: left;
+            padding: 20px 0;
+        }
+        .footer  span{
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="index">
+        <div class="daohang">
+            <img src="../img/index/logo.png">
+            <ul>
+               <li><a href="index.html">首页</a></li> 
+               <li><a href="mengchong.html">萌宠</a></li> 
+               <li><a href="chongwuhuodong.html">宠物活动</a></li> 
+               <li><a href="yongpindaquan.html">用品大全</a></li> 
+               <li><a href="chongaishequ.html">宠爱社区</a></li>
+               <li><a href="wode.html">我的</a></li>  
+            </ul>
+            <div class="sousuo">
+                <input type="text" placeholder="      领养动物" class="search">
+                 <button class="sousuo1"> <span class="iconfont icon-sousuo"></span>搜索</button>
+             </div>
+            <div class="denglu">
+               <a href="denglu.html">
+                   <img src="../img/index/头像.jpg">
+               </a>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="../img/index/banner.jpg">
+        </div>
+        <div class="middle1">
+            <div class="chongjiexinwen">
+                <img src="../img/index/新闻图标.png">
+                <h3>宠届新闻</h3>
+            </div>
+            <div class="cjxwleft">
+                <div id="imgchange">
+                    <img class="img-slide" src="../img/index/轮播1.png">
+                    <img class="img-slide" src="../img/index/轮播2.png">
+                    <img class="img-slide" src="../img/index/轮播3.png">
+                    <img class="img-slide" src="../img/index/轮播4.jpg">
+                </div>
+            </div>
+            <div class="cjxwmiddle">
+                <div class="cjxwmiddletop">
+                    <div class="cjxwtuijian">
+                        <div class="tuijian">
+                            <span>推荐</span>
+                        </div>
+                        <h4><a href="#">你有想过将宠物带入工作场所吗？</a></h4>
+                    </div>
+                    <p>在国外很多家庭至少拥有一只宠物。他们养宠物有很多原因，其中最重要的是它们为人们提供了重要的健康益处。</p>
+                </div>
+                <div class="cjxwmiddlebottom">
+                    <ul class="cjxwmiddlebottom1">
+                        <li>
+                            <a href="#">打破禁锢，优朗为宠物提供有针对性营养补充奶</a>
+                        </li>
+                        <li>
+                            <a href="#">优朗——深耕细作 只为爱宠优选精准营养</a>
+                        </li>
+                        <li>
+                            <a href="#">爱宠人士看过来！小天鹅洗烘套装拯救你的“崩溃瞬间”</a>
+                        </li>
+                        <li>
+                            <a href="#">美的双十二进军非家电类目：萌宠“起居系列”来袭 </a>
+                        </li>
+                        <li>
+                            <a href="#">CBNData联合红嘴猫发布《猫咪饮食健康趋势洞察报告》</a>
+                        </li>
+                        <li>
+                            <a href="#">国任保险推出3个月免费宠物医疗保险，从此养宠无忧</a>
+                        </li>
+                        <li>
+                            <a href="#">ZIWI滋益巅峰在第23届亚宠会喜获佳绩</a>
+                        </li>
+                        <li>
+                            <a href="#">狗狗有相当发达的嗅觉系统 用鼻子“看”世界</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cjxwright">
+                <div class="cjxwrighttop">
+                    <span>宠届</span><span>新闻榜</span>
+                </div>
+                <ul class="cjxwrightmiddle">
+                    <li>
+                        <p><span>1</span>打破禁锢，优朗为宠物提供有针对性营养补充奶</p> 
+                    </li>
+                    <li>
+                        <p><span>2</span>优朗深耕细作 只为爱宠优选精准营养</p> 
+                    </li>
+                    <li>
+                        <p><span>3</span>爱宠人士看过来!小天鹅洗烘套装救你的“崩溃”</p> 
+                    </li>
+                    <li>
+                        <p><span>4</span>美的双十二进军非家电类目:萌宠“起居系列”来</p> 
+                    </li>
+                    <li>
+                        <p><span>5</span>CBNData联合红嘴猫发布《猫咪饮食趋势洞察》</p> 
+                    </li>
+                    <li>
+                        <p><span>6</span>女子暖心收留可怜浪汪 它救回奶奶一命以回报</p> 
+                    </li>
+                    <li>
+                        <p><span>7</span>本汪肚子饿，快放饭饭！ 不然森七七摔碗给你看</p> 
+                    </li>
+                    <li>
+                        <p><span>8</span>很多美国的普通家庭饲养“另类”凶猛宠物</p> 
+                    </li>
+                    <li>
+                        <p><span>9</span>狗狗也炫富 过着奢华生活的富家狗</p> 
+                    </li>
+                    <li>
+                        <p><span>10</span>美国“逆天”拉布拉多犬独自乘公交去公园玩耍</p> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="middle2">
+            <div class="yangchongchangshi">
+                <img src="../img/index/常识图标.png">
+                <h3>养宠常识</h3>
+            </div>
+            <div class="yccsleft">
+                <ul class="yccsul">
+                    <li class="yccsli">
+                        <p>养狗</p><a href="#"><span>《更多</span></a>
+                        <a href="#"><img src="../img/index/狗.png"></a>
+                        <ul class="nr">
+                            <li><a href="#">柴犬咬人怎么办 这招可以简单防止</a></li>
+                            <li><a href="#">柴犬能吃米饭吗 柴犬吃米饭的好处</a></li>
+                            <li><a href="#">柴犬能吃什么水果 柴犬能吃的水果</a></li>
+                        </ul>
+                    </li>
+                    <li class="yccsli">
+                        <p>养猫</p><a href="#"><span>《更多</span></a>
+                        <a href="#"><img src="../img/index/猫.png"></a>
+                        <ul class="nr">
+                            <li><a href="#">猫咪总挠人是什么原因？原因竟是..</a></li>
+                            <li><a href="#">猫猫爱吃那种鱼罐头 请详细查看..</a></li>
+                            <li><a href="#">猫咪真的可以抓老鼠吗？点击查看</a></li>
+                        </ul>
+                    </li>
+                    <li class="yccsli">
+                        <p>养兔</p><a href="#"><span>《更多</span></a>
+                        <a href="#"><img src="../img/index/兔子.png"></a>
+                        <ul class="nr">
+                            <li><a href="#">英国安哥拉兔能活多久 安哥拉兔能</a></li>
+                            <li><a href="#">雷克斯兔怎样 雷克斯兔享有兔中之</a></li>
+                            <li><a href="#">波兰兔怎么样 波兰兔胆小怕惊而善</a></li>
+                        </ul>
+                    </li>
+                    <li class="yccsli">
+                        <p>养仓鼠</p><a href="#"><span>《更多</span></a>
+                        <a href="#"><img src="../img/index/仓鼠.png"></a>
+                        <ul class="nr">
+                            <li><a href="#">如何养西施熊 需要准备一个比较大</a></li>
+                            <li><a href="#">西施熊品种 西施熊品种只有一种有</a></li>
+                            <li><a href="#">西施熊怎么养 笼子门上要记得用铁</a></li>
+                        </ul>    
+                    </li>
+                    <li class="yccsli">
+                        <p>养鱼</p><a href="#"><span>《更多</span></a>
+                        <a href="#"><img src="../img/index/鱼.png"></a>
+                        <ul class="nr">
+                            <li><a href="#">招财鱼属于热带鱼吗 招财鱼是热带</a></li>
+                            <li><a href="#">什么热带鱼最漂亮 推荐几种漂亮的</a></li>
+                            <li><a href="#">家庭怎样养热带鱼 家庭养热带鱼用</a></li>
+                        </ul>
+                    </li>
+                    <li class="yccsli">
+                        <p>养鸟</p><a href="#"><span>《更多</span></a>
+                        <a href="#"><img src="../img/index/鸟.png"></a>
+                        <ul class="nr">
+                            <li><a href="#">塞内加尔鹦鹉聪明吗 有模仿及学话</a></li>
+                            <li><a href="#">黄眉柳莺和黄腰柳莺的区别 没有淡</a></li>
+                            <li><a href="#">黄眉柳莺吃什么 柳莺喜欢吃蝽象叶</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="yccsright">
+                <img src="../img/index/海报.png">
+            </div>
+
+        </div>
+        <div class="middle3">
+            <div class="jibingbaike">
+                <img src="../img/index/健康图标.png">
+                <h3>疾病百科</h3>
+            </div>
+            <div class="jbbkleft">
+                <div id="imgchange1">
+                    <img class="img-slide1" src="../img/index/轮播5.png">
+                    <img class="img-slide1" src="../img/index/轮播6.png">
+                    <img class="img-slide1" src="../img/index/轮播7.png">
+                    <img class="img-slide1" src="../img/index/轮播8.png">
+                    
+                </div>
+            </div>
+            <div class="jbbkmiddle">
+                <div class="jbbkmiddletop">
+                    <div class="jbbktuijian">
+                        <div class="tuijian1">
+                            <span>推荐</span>
+                        </div>
+                        <h4><a href="#">阿拉斯加雪橇犬皮肤病 治疗方法加预防</a></h4>
+                    </div>
+                    <p>阿拉斯加雪橇犬皮肤病，阿拉斯加雪橇犬毛发非常的旺盛，所以也很容易引发各种皮肤疾病，所以要注意给阿拉斯加雪橇犬清洁</p>
+                </div>
+                <div class="jbbkmiddlebottom">
+                    <ul class="jbbkmiddlebottom1">
+                        <li>
+                            <a href="#">毛孩嘴巴怪怪的？可能食道卡异物要当心！</a>
+                        </li>
+                        <li>
+                            <a href="#">松鼠感冒了怎么办 注意保持房间内的通风</a>
+                        </li>
+                        <li>
+                            <a href="#">爱宠人士看过来！小天鹅洗烘套装拯救你的“崩溃瞬间”</a>
+                        </li>
+                        <li>
+                            <a href="#">松鼠打喷嚏怎么办 可以喂点板蓝根冲剂 </a>
+                        </li>
+                        <li>
+                            <a href="#">史宾格犬最易犯什么病 六种史宾格容易犯的病</a>
+                        </li>
+                        <li>
+                            <a href="#">松狮犬皮肤病什么症状 嘴唇周围皮肤发红脱毛</a>
+                        </li>
+                        <li>
+                            <a href="#">松狮犬皮肤病如何冶病 千万不能随意给狗狗用药</a>
+                        </li>
+                        <li>
+                            <a href="#">萨摩耶犬犬瘟热 最初体温升高达40度左右</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="jbbkright">
+                <div class="jbbkrighttop">
+                    <span>热门</span><span>阅读榜</span>
+                </div>
+                <ul class="jbbkrightmiddle">
+                    <li>
+                        <p><span>1</span>毛孩嘴巴怪怪的? 可能食道卡异物要当心!</p> 
+                    </li>
+                    <li>
+                        <p><span>2</span>松鼠感冒了怎么办 注意保持房间内的通风</p> 
+                    </li>
+                    <li>
+                        <p><span>3</span>松鼠打喷嘻怎么办 可以喂点板蓝根冲剂</p> 
+                    </li>
+                    <li>
+                        <p><span>4</span>史宾格犬最易犯什么病 六种史宾格容易犯的病</p> 
+                    </li>
+                    <li>
+                        <p><span>5</span>松狮犬皮肤病什么症状 嘴唇周围皮肤发红脱毛</p> 
+                    </li>
+                    <li>
+                        <p><span>6</span>萨摩耶犬常见病 萨摩耶犬容易患的三种疾病</p> 
+                    </li>
+                    <li>
+                        <p><span>7</span>松鼠感冒了怎么办 注意保持房间内的通风</p> 
+                    </li>
+                    <li>
+                        <p><span>8</span>宠物貂拉肚子 用丽珠肠乐胶囊进行调整</p> 
+                    </li>
+                    <li>
+                        <p><span>9</span>西施熊皮肤病 发现西施熊掉毛就有可能是皮肤病</p> 
+                    </li>
+                    <li>
+                        <p><span>10</span>法国斗牛犬可以顺产吗 难产如何快速解决</p> 
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+            <div class="footer">
+                <span>宠物资讯 | <span>社区精选</span> | <span>管理团队</span> | <span>下载客户端</span> | 会员服务 | <span>宠物送养</span> | <span>宠物领养</span> | <span>关于我们</span> | <span>领养E家</span></span>
+                <p>商务合作邮箱:1712029682@qq.com 客服电话:89736429</p>
+                <p>网站展示的宠物及品牌信息和数据，是基于互联网大数据及品牌方的公开信息，收集整理客观呈现，仅提供参考使用，不代表网站支持观点；
+                    如有侵权、错误信息，请及时联系我们更正或删除！</p>
+                <p>领养E家版权所有</p>
+                <p>QQ:1712029682  备案号: 沪GHJ备16030722号-7</p>
+                <p>©2014 - 2024        联系我们免责声明</p>
+            </div>
+    </div>
+    
+    
+    <script>
+        //活动轮播图动画效果
+        var index=0;
+        function ChangeImg() {
+            index++;
+            var a=document.getElementsByClassName("img-slide");
+            if(index>=a.length) index=0;
+            for(var i=0;i<a.length;i++){
+                a[i].style.display='none';
+            }
+            a[index].style.display='block';
+        } 
+        setInterval(ChangeImg,2000);  
+
+         //活动轮播图动画效果
+         var indexa=0;
+        function ChangeImgA() {
+            indexa++;
+            var b=document.getElementsByClassName("img-slide1");
+            if(indexa>=b.length) indexa=0;
+            for(var j=0;j<b.length;j++){
+                b[j].style.display='none';
+            }
+            b[indexa].style.display='block';
+        } 
+        setInterval(ChangeImgA,2000);  
+    </script>
+</body>
+</html>
